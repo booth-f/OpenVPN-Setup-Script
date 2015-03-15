@@ -21,7 +21,7 @@ mv raw.php?i=kxxvGtVH "$CLIENT".ovpn
 echo "" >> "$CLIENT".ovpn
 echo "remote $IP 1194" >> "$CLIENT".ovpn
 echo "<ca>" >> "$CLIENT".ovpn
-cat server.crt >> "$CLIENT".ovpn
+cat ca.crt >> "$CLIENT".ovpn
 echo "</ca>" >> "$CLIENT".ovpn
 echo "<cert>" >> "$CLIENT".ovpn
 cat "$CLIENT".crt >> "$CLIENT".ovpn
