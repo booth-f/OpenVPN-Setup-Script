@@ -68,12 +68,18 @@ rm -rf vars
 wget http://pastebin.com/raw.php?i=qgCiesAF
 mv raw.php?i=qgCiesAF vars
 echo "" >> vars
-printf "export KEY_COUNTRY="$KEY_COUNTRY"" >> vars 
-printf "export KEY_PROVINCE="$KEY_PROVINCE"" >> vars
-printf "export KEY_CITY="$KEY_CITY"" >> vars 
-printf "export KEY_ORG="$KEY_ORG"" >> vars 
-printf "export KEY_EMAIL="$KEY_EMAIL"" >> vars 
-printf "export KEY_OU="$KEY_OU"" >> vars 
+printf "export KEY_COUNTRY='$KEY_COUNTRY'" >> vars 
+echo "" >> vars
+printf "export KEY_PROVINCE='$KEY_PROVINCE'" >> vars
+echo "" >> vars
+printf "export KEY_CITY='$KEY_CITY'" >> vars
+echo "" >> vars
+printf "export KEY_ORG='$KEY_ORG'" >> vars
+echo "" >> vars
+printf "export KEY_EMAIL='$KEY_EMAIL'">> vars 
+echo "" >> vars
+printf "export KEY_OU='$KEY_OU'">> vars
+echo "" >> vars
 source ./vars
 ./clean-all
 ./build-ca
