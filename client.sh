@@ -18,12 +18,13 @@ source ./vars
 cd keys
 wget http://pastebin.com/raw.php?i=kxxvGtVH
 mv raw.php?i=kxxvGtVH "$CLIENT".ovpn
+echo "" > "$CLIENT".ovpn
 echo "remote $IP 1194" >> "$CLIENT".ovpn
 echo "<ca>" >> "$CLIENT".ovpn
-cat server.ca >> "$CLIENT".ovpn
+cat server.crt >> "$CLIENT".ovpn
 echo "</ca>" >> "$CLIENT".ovpn
 echo "<cert>" >> "$CLIENT".ovpn
-cat "$CLIENT".cert >> "$CLIENT".ovpn
+cat "$CLIENT".crt >> "$CLIENT".ovpn
 echo "</cert>" >> "$CLIENT".ovpn
 echo "<key>" >> "$CLIENT".ovpn
 cat "$CLIENT".key >> "$CLIENT".ovpn
