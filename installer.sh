@@ -6,56 +6,6 @@ echo "This script must be run as root."
 exit
 fi
 
-echo "This script will set up OpenVPN as well as properly set the configuration and vars file for signing your keys."
-
-echo -n "Country [Ex: US]: "
-read KEY_COUNTRY
-
-if [[ -z "$KEY_COUNTRY" ]] ; then
-echo "Defaulting to US"
-export KEY_COUNTRY=""US""
-fi
-
-echo -n "State [Ex: CA]: "
-read KEY_PROVINCE
-
-if [[ -z "$KEY_PROVINCE" ]] ; then
-echo "Defaulting to CA"
-export KEY_PROVINCE=""CA""
-fi
-
-echo -n "City [Ex: SanFrancisco]: "
-read KEY_CITY
-
-if [[ -z "$KEY_CITY" ]] ; then
-echo "Defaulting to SanFrancisco"
-export KEY_CITY=""SanFrancisco""
-fi
-
-echo -n "Organization [Ex: Fort-Funston]: "
-read KEY_ORG
-
-if [[ -z "$KEY_ORG" ]] ; then
-echo "Defaulting to Fort-Funston"
-export KEY_ORG=""Fort-Funston""
-fi
-
-echo -n "Email [Ex: me@myhost.mydomain]: "
-read KEY_EMAIL
-
-if [[ -z "$KEY_EMAIL" ]] ; then
-echo "Defaulting to me@myhost.mydomain "
-export KEY_EMAIL=""me@myhost.mydomain""
-fi
-
-echo -n "Organization Unit [Ex: Information Technology]: "
-read KEY_OU
-
-if [[ -z "$KEY_OU" ]] ; then
-echo "Defaulting to Information Technology"
-export KEY_OU=""Information Technology""
-fi
-
 apt-get install openvpn
 cd /etc/openvpn/
 wget http://pastebin.com/raw.php?i=bHW1uj8i
