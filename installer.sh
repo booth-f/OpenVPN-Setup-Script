@@ -59,20 +59,20 @@ fi
 apt-get install openvpn
 cd /etc/openvpn/
 wget http://pastebin.com/raw.php?i=bHW1uj8i
-mv raw.php?i=bHWiuj8i server.conf
+mv raw.php?i=bHW1uj8i server.conf
 wget https://github.com/OpenVPN/easy-rsa/releases/download/2.2.2/EasyRSA-2.2.2.tgz
 tar -xf EasyRSA-2.2.2.tgz
 mv EasyRSA-2.2.2 easy-rsa
 cd easy-rsa
 rm -rf vars
 wget http://pastebin.com/raw.php?i=qgCiesAF
-mv raw.php?i=ggCiesAF vars
-echo "export KEY_COUNTRY="$KEY_COUNTRY >> vars 
-echo "export KEY_PROVINCE="$KEY_PROVINCE >> vars
-echo "export KEY_CITY="$KEY_CITY >> vars 
-echo "export KEY_ORG="$KEY_ORG >> vars 
-echo "export KEY_EMAIL="$KEY_EMAIL >> vars 
-echo "export KEY_OU="$KEY_OU >> vars 
+mv raw.php?i=qgCiesAF vars
+echo ""export KEY_COUNTRY="$KEY_COUNTRY" >> vars 
+echo ""export KEY_PROVINCE="$KEY_PROVINCE" >> vars
+echo ""export KEY_CITY="$KEY_CITY" >> vars 
+echo ""export KEY_ORG="$KEY_ORG" >> vars 
+echo ""export KEY_EMAIL="$KEY_EMAIL" >> vars 
+echo ""export KEY_OU="$KEY_OU" >> vars 
 source ./vars
 ./clean-all
 ./build-ca
