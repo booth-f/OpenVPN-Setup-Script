@@ -12,7 +12,8 @@ curl icanhazip.com
 echo -n "Enter the address specified above:"
 read IP
 
-cd /etc/openvpn/easy-rsa
+cd /etc/openvpn/easy-rsa/
+source ./vars
 ./build-key $CLIENT
 cd keys
 wget http://pastebin.com/raw.php?i=kxxvGtVH
