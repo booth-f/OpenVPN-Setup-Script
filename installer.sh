@@ -13,7 +13,7 @@ read KEY_COUNTRY
 
 if [[ -z "$KEY_COUNTRY" ]] ; then
 echo "Defaulting to US"
-export KEY_COUNTRY="US"
+export KEY_COUNTRY=""US""
 fi
 
 echo -n "State [Ex: CA]: "
@@ -21,7 +21,7 @@ read KEY_PROVINCE
 
 if [[ -z "$KEY_PROVINCE" ]] ; then
 echo "Defaulting to CA"
-export KEY_PROVINCE="CA"
+export KEY_PROVINCE=""CA""
 fi
 
 echo -n "City [Ex: SanFrancisco]: "
@@ -29,7 +29,7 @@ read KEY_CITY
 
 if [[ -z "$KEY_CITY" ]] ; then
 echo "Defaulting to SanFrancisco"
-export KEY_CITY="SanFrancisco"
+export KEY_CITY=""SanFrancisco""
 fi
 
 echo -n "Organization [Ex: Fort-Funston]: "
@@ -37,7 +37,7 @@ read KEY_ORG
 
 if [[ -z "$KEY_ORG" ]] ; then
 echo "Defaulting to Fort-Funston"
-export KEY_ORG="Fort-Funston"
+export KEY_ORG=""Fort-Funston""
 fi
 
 echo -n "Email [Ex: me@myhost.mydomain]: "
@@ -45,7 +45,7 @@ read KEY_EMAIL
 
 if [[ -z "$KEY_EMAIL" ]] ; then
 echo "Defaulting to me@myhost.mydomain "
-export KEY_EMAIL="me@myhost.mydomain"
+export KEY_EMAIL=""me@myhost.mydomain""
 fi
 
 echo -n "Organization Unit [Ex: Information Technology]: "
@@ -53,7 +53,7 @@ read KEY_OU
 
 if [[ -z "$KEY_OU" ]] ; then
 echo "Defaulting to Information Technology"
-export KEY_OU="Information Technology"
+export KEY_OU=""Information Technology""
 fi
 
 apt-get install openvpn
@@ -67,12 +67,12 @@ cd easy-rsa
 rm -rf vars
 wget http://pastebin.com/raw.php?i=qgCiesAF
 mv raw.php?i=qgCiesAF vars
-echo ""export KEY_COUNTRY=""$KEY_COUNTRY"" >> vars 
-echo ""export KEY_PROVINCE=""$KEY_PROVINCE"" >> vars
-echo ""export KEY_CITY=""$KEY_CITY"" >> vars 
-echo ""export KEY_ORG=""$KEY_ORG"" >> vars 
-echo ""export KEY_EMAIL=""$KEY_EMAIL"" >> vars 
-echo ""export KEY_OU=""$KEY_OU" " >> vars 
+echo "export KEY_COUNTRY="$KEY_COUNTRY >> vars 
+echo "export KEY_PROVINCE="$KEY_PROVINCE >> vars
+echo "export KEY_CITY="$KEY_CITY >> vars 
+echo "export KEY_ORG="$KEY_ORG >> vars 
+echo "export KEY_EMAIL"=$KEY_EMAIL >> vars 
+echo "export KEY_OU="$KEY_OU >> vars 
 source ./vars
 ./clean-all
 ./build-ca
