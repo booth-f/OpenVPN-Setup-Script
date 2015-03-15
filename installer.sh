@@ -22,6 +22,7 @@ source ./vars
 cd keys
 cp dh2048.pem ca.crt server.crt server.key /etc/openvpn
 echo 1 > /proc/sys/net/ipv4/ip_forward
+service openvpn start
 echo "Installation Complete, your server should be all set up and ready to accept clients."
 echo ""
 echo "To generate your client keys use the client creation script"
