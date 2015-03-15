@@ -67,12 +67,19 @@ cd easy-rsa
 rm -rf vars
 wget http://pastebin.com/raw.php?i=qgCiesAF
 mv raw.php?i=qgCiesAF vars
+echo "" >> vars
 echo "export KEY_COUNTRY="$KEY_COUNTRY >> vars 
 echo "export KEY_PROVINCE="$KEY_PROVINCE >> vars
 echo "export KEY_CITY="$KEY_CITY >> vars 
 echo "export KEY_ORG="$KEY_ORG >> vars 
 echo "export KEY_EMAIL"=$KEY_EMAIL >> vars 
 echo "export KEY_OU="$KEY_OU >> vars 
+sed 's/\b$KEY_COUNTRY\b/"$KEY_COUNTRY"/' -i vars
+sed 's/\$KEY_PROVINCE\b/"$KEY_PROVINCE"/' -i vars
+sed 's/\$KEY_CITY\b/"$KEY_CITY"/' -i vars
+sed 's/\$KEY_ORG\b/"$KEY_ORG"/' -i vars
+sed 's/\$KEY_EMAIL\b/"$KEY_EMAIL"/' -i vars
+sed 's/\$KEY_OU\b/"$KEY_OU"/' -i vars
 source ./vars
 ./clean-all
 ./build-ca
