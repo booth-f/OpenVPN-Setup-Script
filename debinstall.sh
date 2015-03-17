@@ -6,6 +6,7 @@ echo "This script must be run as root."
 exit
 fi
 
+apt-get update
 apt-get install openvpn curl
 cd /etc/openvpn/
 wget http://pastebin.com/raw.php?i=bHW1uj8i
