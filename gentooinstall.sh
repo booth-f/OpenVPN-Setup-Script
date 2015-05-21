@@ -6,7 +6,7 @@ echo "This script must be run as root."
 exit
 fi
 
-emerge openvpn curl wget
+emerge -qa openvpn curl wget
 cd /etc/openvpn/
 wget http://pastebin.com/raw.php?i=bHW1uj8i
 mv raw.php?i=bHW1uj8i server.conf
