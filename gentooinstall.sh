@@ -1,11 +1,11 @@
-#Created for Debian Derived Systems
-#Will be updated for more systems later
+#Created for Gentoo Systems
 
 if [[ "$USER" != 'root' ]]; then
 echo "This script must be run as root."
 exit
 fi
 
+emerge --sync -q   #Update local portage tree
 emerge -qa openvpn curl wget
 cd /etc/openvpn/
 wget http://pastebin.com/raw.php?i=bHW1uj8i
