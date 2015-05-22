@@ -1,5 +1,4 @@
-#Created for Debian Derived Systems
-#Will be updated for more systems later
+#!/bin/bash
 
 if [[ "$USER" != 'root' ]]; then
 echo "This script must be run as root."
