@@ -1,4 +1,5 @@
 #!/bin/bash
+#This script is univeral for any flavor of Linux.
 
 echo -n "Enter a name for your client: "
 read CLIENT
