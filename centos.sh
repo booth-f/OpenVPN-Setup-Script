@@ -8,8 +8,7 @@ echo -n "Please specify which interface is connected to the Internet (If unsure 
 read IFACE
 
 yum install wget #Just incase the target system does not have wget.
-wget http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-rpm -Uvh epel-release-6-8.noarch.rpm
+yum install epel-release
 yum update
 yum install openvpn curl -y
 cd /etc/openvpn/
