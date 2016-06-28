@@ -7,9 +7,6 @@ __Current Supported Distros__
   * Ubuntu
   * CentOS
   * Gentoo
-  
-
-      Adaptations are welcome to be contributed.
 
 #Installation / Use
 
