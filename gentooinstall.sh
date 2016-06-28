@@ -5,6 +5,9 @@ echo "This script must be run as root."
 exit
 fi
 
+echo -n "Please specify which interface is connected to the Internet (If unsure use eth0): "
+read IFACE
+
 emerge --sync -q   #Update local portage tree
 emerge -qa openvpn curl wget
 cd /etc/openvpn/
@@ -22,6 +25,7 @@ source ./vars
 cd keys
 cp dh2048.pem ca.crt server.crt server.key /etc/openvpn
 echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o "$IFACE" -j MASQUERADE
 service openvpn start
 echo "Installation Complete, your server should be all set up and ready to accept clients."
 echo ""
