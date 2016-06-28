@@ -9,8 +9,8 @@ if [[ -z "$CLIENT" ]] ; then
   exit 1
 fi
 
-curl icanhazip.com
-echo -n "Enter the address specified above:"
+curl ipv4.icanhazip.com
+echo -n "Enter the address specified above or if using a local server type the LAN address: "
 read IP
 
 cd /etc/openvpn/easy-rsa/
@@ -30,4 +30,5 @@ echo "</cert>" >> "$CLIENT".ovpn
 echo "<key>" >> "$CLIENT".ovpn
 cat "$CLIENT".key >> "$CLIENT".ovpn
 echo "</key>" >> "$CLIENT".ovpn
-echo "Client setup is complete, you can find your key at "$CLIENT".ovpn"
+mv "$CLIENT".ovpn /root/"$CLIENT".ovpn
+echo "Client setup is complete, you can find your key at /root/"$CLIENT".ovpn"
